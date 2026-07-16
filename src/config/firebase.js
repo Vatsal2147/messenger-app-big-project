@@ -1,27 +1,27 @@
-// Import the functions you need from the SDKs you need
+// Firebase setup — config values come from environment variables (see .env).
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth, GoogleAuthProvider} from "firebase/auth";
-import {getFirestore} from 'firebase/firestore'
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getDatabase } from "firebase/database";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAL7V0SXvo0a_kp8bSULMqx471f_53mb8c",
-  authDomain: "messenger-app-f236f.firebaseapp.com",
-  projectId: "messenger-app-f236f",
-  storageBucket: "messenger-app-f236f.firebasestorage.app",
-  messagingSenderId: "960724386352",
-  appId: "1:960724386352:web:d165efc7a7c0953a3b23f5",
-  measurementId: "G-8EY07YBWWJ"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+  // Realtime Database needs its own URL — Firebase console gives you this
+  // when you enable Realtime Database (Build → Realtime Database → Create).
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
-export const db = getFirestore(app);
+export const db = getFirestore(app);       // Firestore: users, rooms, messages
+export const rtdb = getDatabase(app);      // Realtime Database: presence, typing
+

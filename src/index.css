@@ -49,3 +49,45 @@ border: 1px solid rgba(255, 255, 255, 0.3);
     border: 1px solid white;
     border-radius: 16px 0 0 16px;
 }
+
+/* ---- Light mode ---- */
+/* .parent gets the "dark" or "light" class from App.jsx, persisted via
+   localStorage. Dark is the original design (default). Light flips the
+   background/panel/text so the toggle actually does something visible. */
+.light.parent{
+    background-image: none;
+    background-color: #eef0f3;
+}
+
+.light .parent1{
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light .parent1 h1,
+.light .parent1 h2,
+.light .parent1 h3,
+.light .parent1 h4,
+.light .parent1 h6,
+.light .parent1 span,
+.light .parent1 p,
+.light .parent1 input,
+.light .parent1 svg {
+    color: #111 !important;
+}
+
+.light .parent1 input{
+    background: #fff !important;
+}
+
+/* Keep red action buttons and sent-message bubbles readable in light mode */
+.light .parent1 .bg-red-600 *,
+.light .parent1 .bg-red-500 * {
+    color: #fff !important;
+}
+
+.light .parent1 .border-white,
+.light .parent1 .border-white\/30,
+.light .parent1 .border-white\/50 {
+    border-color: rgba(0, 0, 0, 0.15) !important;
+}

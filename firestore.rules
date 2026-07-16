@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // users/{uid} — profile info (name, photo, email, lastSeen).
+    // Anyone signed in can read (needed for the "Online" list + sender
+    // names), but you can only write your own profile doc.
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // rooms/{roomId} — this is a public-rooms app (per the course spec:
+    // "all rooms for a public app"), so any signed-in user can read the
+    // room list and create new rooms.
+    match /rooms/{roomId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null
+                    && request.resource.data.createdBy == request.auth.uid;
+      allow update, delete: if false;
+
+      // rooms/{roomId}/messages/{messageId}
+      // Any signed-in user can read messages in any room. You can only
+      // send a message as yourself. Nobody can edit/delete after sending.
+      match /messages/{messageId} {
+        allow read: if request.auth != null;
+        allow create: if request.auth != null
+                      && request.resource.data.senderId == request.auth.uid;
+        allow update, delete: if false;
+      }
+    }
+  }
+}
