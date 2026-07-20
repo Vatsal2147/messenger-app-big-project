@@ -5,10 +5,9 @@ import { doc, setDoc, serverTimestamp as firestoreTimestamp } from "firebase/fir
 
 // Marks the current user online in Realtime Database, and automatically
 // flips them to offline the moment their connection drops (tab closed,
-// wifi dies, etc) — that's what onDisconnect() does, it's a promise Firebase
+// wifi dies, etc) what onDisconnect() does, it's a promise Firebase
 // keeps even if the browser never gets to run any of our JS again.
-// Also keeps a matching user profile doc in Firestore (users/{uid}) so
-// other parts of the app (like a member list) can read name/photo/lastSeen.
+
 export function usePresence(user) {
   useEffect(() => {
     if (!user) return;
@@ -21,7 +20,7 @@ export function usePresence(user) {
     const connectedRef = ref(rtdb, ".info/connected");
     const unsubscribe = onValue(connectedRef, (snap) => {
       if (snap.val() === false) return;
-
+      // to show if someone is offline or online
       onDisconnect(statusRef)
         .set({ state: "offline", lastChanged: rtdbTimestamp() })
         .then(() => {

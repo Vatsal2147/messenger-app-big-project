@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Phone, Video, Info } from "lucide-react";
+import { Phone, Video, Info, MessagesSquare } from "lucide-react";
 import {
   collection,
   addDoc,
@@ -79,40 +79,48 @@ export default function ChatWindow({ currentUser }) {
 
   if (!roomId) {
     return (
-      <div className="border-1 border-white flex-1 h-full flex items-center justify-center">
+      <div className="border-1 border-white/20 flex-1 h-full flex flex-col items-center justify-center gap-3 fade-in">
+        <MessagesSquare size={40} className="text-white/30" />
         <p className="text-white/60">Select a room, or create a new one to get started.</p>
       </div>
     );
   }
 
   return (
-    <div className="border-1 border-white flex-1 h-full flex flex-col">
-      <div className="border-1 border-white w-full h-[8%] min-h-[60px] pt-3 pl-3 pb-2 flex align-center">
+    <div className="border-1 border-white/20 flex-1 h-full flex flex-col">
+      <div className="border-b border-white/20 w-full h-[8%] min-h-[60px] pt-3 pl-3 pb-2 flex align-center fade-in">
         <div className="border-white w-full leading-tight ml-2 text-white flex justify-between align-center">
           <div className="mt-2">
             <h1 className="font-bold font-sm"> {room?.name || "Loading..."}</h1>
-            <h3 className="font-sm text-xs text-white/60 h-4">
+            <h3 className="font-sm text-xs text-white/60 h-4 flex items-center gap-1">
+              {typingUsers.length > 0 && (
+                <span className="flex gap-0.5 items-end pb-0.5">
+                  <span className="typing-dot w-1 h-1 rounded-full" style={{ background: "#f5b942" }} />
+                  <span className="typing-dot w-1 h-1 rounded-full" style={{ background: "#f5b942" }} />
+                  <span className="typing-dot w-1 h-1 rounded-full" style={{ background: "#f5b942" }} />
+                </span>
+              )}
               {typingUsers.length > 0
                 ? `${typingUsers.join(", ")} ${typingUsers.length === 1 ? "is" : "are"} typing...`
                 : ""}
             </h3>
           </div>
           <div className="flex gap-3 mt-2 text-sm mr-3">
-            <Phone className="cursor-pointer" />
-            <Video className="cursor-pointer" />
-            <Info className="cursor-pointer" />
+            <Phone className="cursor-pointer transition-transform duration-200 hover:scale-110 hover:text-red-400" size={18} />
+            <Video className="cursor-pointer transition-transform duration-200 hover:scale-110 hover:text-red-400" size={18} />
+            <Info className="cursor-pointer transition-transform duration-200 hover:scale-110 hover:text-red-400" size={18} />
           </div>
         </div>
       </div>
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto thin-scroll">
         {loading ? (
-          <p className="text-white/50 text-sm text-center mt-4">Loading messages...</p>
+          <p className="text-white/50 text-sm text-center mt-4 animate-pulse">Loading messages...</p>
         ) : messages.length === 0 ? (
-          <p className="text-white/50 text-sm text-center mt-4">
+          <p className="text-white/50 text-sm text-center mt-4 fade-in">
             No messages yet — say hi!
           </p>
         ) : (
-          messages.map((msg) => (
+          messages.map((msg, i) => (
             <MessageBubble
               key={msg.id}
               text={msg.text}

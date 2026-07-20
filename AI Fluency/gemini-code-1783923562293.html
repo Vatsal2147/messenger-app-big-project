@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Environmental Science & Engineering</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-emerald-600 text-white p-2.5 rounded-xl shadow-md shadow-emerald-600/20">
+                    <i class="fa-solid fa-leaf text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 block">Department of</span>
+                    <span class="text-lg font-bold text-slate-900 tracking-tight">Environmental Science & Engineering</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-emerald-600 transition">About</a>
+                <a href="#research" class="hover:text-emerald-600 transition">Research</a>
+                <a href="#academics" class="hover:text-emerald-600 transition">Academics</a>
+                <a href="#sustainability" class="hover:text-emerald-600 transition">Campus Initiatives</a>
+                <a href="#contact" class="bg-slate-950 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition shadow-sm">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900 text-white py-24 px-4 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-6">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Leading Global Climate Solutions
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Engineering a Sustainable, <br class="hidden md:block"><span class="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">Carbon-Neutral</span> Future
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+                Bridging rigorous ecological science with cutting-edge engineering solutions to tackle the planet's most critical environmental challenges.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#academics" class="w-full sm:w-auto px-8 py-4 bg-emerald-600 text-white rounded-xl font-medium hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-600/20 text-center">Explore Programs</a>
+                <a href="#research" class="w-full sm:w-auto px-8 py-4 bg-white/10 text-white border border-white/20 rounded-xl font-medium hover:bg-white/20 transition text-center backdrop-blur-sm">View Research Labs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Bar -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-slate-100">
+            <div class="text-center p-4 border-r border-slate-100 last:border-0">
+                <p class="text-3xl md:text-4xl font-bold text-slate-900">45+</p>
+                <p class="text-xs md:text-sm text-slate-500 font-medium mt-1">Core Faculty & Scientists</p>
+            </div>
+            <div class="text-center p-4 md:border-r border-slate-100 last:border-0">
+                <p class="text-3xl md:text-4xl font-bold text-emerald-600">₹12Cr+</p>
+                <p class="text-xs md:text-sm text-slate-500 font-medium mt-1">Active Research Funding</p>
+            </div>
+            <div class="text-center p-4 border-r border-slate-100 last:border-0">
+                <p class="text-3xl md:text-4xl font-bold text-slate-900">180+</p>
+                <p class="text-xs md:text-sm text-slate-500 font-medium mt-1">Annual Publications</p>
+            </div>
+            <div class="text-center p-4 last:border-0">
+                <p class="text-3xl md:text-4xl font-bold text-teal-600">Net-0</p>
+                <p class="text-xs md:text-sm text-slate-500 font-medium mt-1">Campus Goal Target</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Thrust Areas -->
+    <section id="research" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Core Research Frontiers</h2>
+            <p class="text-slate-500 mt-2">Investigating critical interactions across the biosphere, lithosphere, and technosphere.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-wind text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Air Quality & Climate Dynamics</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Monitoring aerosol chemical composition, source apportionment modeling, and researching long-range atmospheric pollutant transport dynamics.
+                    </p>
+                </div>
+                <button onclick="toggleDetails('air-details')" class="mt-6 text-emerald-600 font-medium text-sm flex items-center gap-1 hover:text-emerald-700">
+                    View Active Labs <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+                <div id="air-details" class="hidden mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500">
+                    Labs: Aerosol Mass Spectrometry Lab, Climate Systems Modeling Center.
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-droplet text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Water & Wastewater Engineering</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Developing advanced membrane bioreactors, electrochemical remediation techniques, and tackling emerging contaminants like microplastics.
+                    </p>
+                </div>
+                <button onclick="toggleDetails('water-details')" class="mt-6 text-teal-600 font-medium text-sm flex items-center gap-1 hover:text-teal-700">
+                    View Active Labs <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+                <div id="water-details" class="hidden mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500">
+                    Labs: Hydro-Chemical Engineering Facility, Emerging Contaminants Research Unit.
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-solar-panel text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Circular Economy & Clean Energy</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Designing lifecycle assessment algorithms, thermo-chemical waste-to-energy conversion profiles, and smart microgrid urban layouts.
+                    </p>
+                </div>
+                <button onclick="toggleDetails('energy-details')" class="mt-6 text-amber-600 font-medium text-sm flex items-center gap-1 hover:text-amber-700">
+                    View Active Labs <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+                <div id="energy-details" class="hidden mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500">
+                    Labs: Industrial Ecology & LCA Studio, Bio-Energy Engineering Lab.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campus Sustainability Tracker -->
+    <section id="sustainability" class="bg-slate-900 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-emerald-400 block mb-3">Live Campus Metrics</span>
+                    <h2 class="text-3xl font-bold tracking-tight mb-6">Translating Science into Local Campus Action</h2>
+                    <p class="text-slate-400 mb-8 font-light leading-relaxed">
+                        Our department drives the scientific framework for the university's environmental footprint mitigation strategies. Track current intervention progress updates below:
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-2">
+                                <span>Rooftop Solar Integration Target</span>
+                                <span class="text-emerald-400">72% Completed</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 72%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-2">
+                                <span>Smart Occupancy LED Controls (Hostels)</span>
+                                <span class="text-emerald-400">48% Completed</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 48%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-medium mb-2">
+                                <span>Solid Waste Diversion & Composting</span>
+                                <span class="text-emerald-400">90% Completed</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2.5 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8 backdrop-blur-sm">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-emerald-400"></i> Baseline Footprint Calculator
+                    </h3>
+                    <p class="text-sm text-slate-400 mb-6">Estimate the potential reduction effect of grid electricity offset interventions.</p>
+                    
+                    <div class="space-y-4 text-slate-300">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Annual Grid Consumed Energy (MWh)</label>
+                            <input type="number" id="energyInput" value="3500" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-emerald-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Planned Solar Offset Mix (%)</label>
+                            <input type="range" id="solarMix" min="0" max="100" value="40" class="w-full accent-emerald-500">
+                            <div class="flex justify-between text-xs text-slate-400 mt-1">
+                                <span>0% Grid Mix</span>
+                                <span id="mixValue" class="text-emerald-400 font-bold">40% Solar</span>
+                                <span>100% Solar</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-slate-800 flex justify-between items-center">
+                            <div>
+                                <p class="text-xs text-slate-400 uppercase font-semibold">Estimated CO₂ Saved Annually</p>
+                                <p class="text-2xl font-bold text-emerald-400 mt-1"><span id="co2Result">1148</span> Tons</p>
+                            </div>
+                            <button onclick="calculateSavings()" class="px-5 py-2.5 bg-emerald-600 text-white font-medium text-sm rounded-xl hover:bg-emerald-500 transition">Recalculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Programs & Notices -->
+    <section id="academics" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid lg:grid-cols-3 gap-12">
+            
+            <!-- Left 2 Cols: Academic Framework -->
+            <div class="lg:col-span-2 space-y-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Academic Pathways</h2>
+                    <p class="text-slate-500 mt-1">Interdisciplinary curricula designed to prepare operational technical specialists.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div>
+                            <span class="text-xs font-bold text-emerald-600 uppercase tracking-wide">Undergraduate Program</span>
+                            <h4 class="text-lg font-bold text-slate-900 mt-0.5">B.Tech in Environmental Science and Engineering</h4>
+                            <p class="text-slate-500 text-sm mt-1">Focus fields: Fluid mechanics, environmental chemistry, computational modeling.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center justify-center bg-slate-100 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-200 transition whitespace-nowrap">Curriculum <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1.5"></i></a>
+                    </div>
+
+                    <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div>
+                            <span class="text-xs font-bold text-teal-600 uppercase tracking-wide">Postgraduate Program</span>
+                            <h4 class="text-lg font-bold text-slate-900 mt-0.5">M.Tech / Ph.D. Frameworks</h4>
+                            <p class="text-slate-500 text-sm mt-1">Specializations in hazardous waste containment, climate economics, and industrial biotechnology.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center justify-center bg-slate-100 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-200 transition whitespace-nowrap">Admissions <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1.5"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Col: Notices/Events -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-bullhorn text-emerald-600"></i> Department Announcements
+                </h3>
+                <div class="space-y-6">
+                    <div class="border-l-2 border-emerald-500 pl-4">
+                        <span class="text-xs text-slate-400 font-semibold block">July 18, 2026</span>
+                        <a href="#" class="text-sm font-semibold text-slate-900 hover:text-emerald-600 transition mt-0.5 block">Guest Seminar: Dr. Arisaka on Advanced Electrodialysis Reversal Methods</a>
+                    </div>
+                    <div class="border-l-2 border-slate-300 pl-4">
+                        <span class="text-xs text-slate-400 font-semibold block">July 22, 2026</span>
+                        <a href="#" class="text-sm font-semibold text-slate-900 hover:text-emerald-600 transition mt-0.5 block">Submission deadline for upcoming Autumn Data Innovation Ideathon</a>
+                    </div>
+                    <div class="border-l-2 border-slate-300 pl-4">
+                        <span class="text-xs text-slate-400 font-semibold block">August 05, 2026</span>
+                        <a href="#" class="text-sm font-semibold text-slate-900 hover:text-emerald-600 transition mt-0.5 block">Call for applications: Junior Research Fellow (JRF) in Microplastic Profiling</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-slate-950 text-slate-400 border-t border-slate-900 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <p class="font-bold text-white text-base">Environmental Science & Engineering Department</p>
+                <p class="text-xs text-slate-500 mt-1">Academic Complex, Engineering Campus Blocks.</p>
+            </div>
+            <div class="flex gap-6 text-xs font-medium">
+                <a href="#" class="hover:text-white transition">Faculty Directory</a>
+                <a href="#" class="hover:text-white transition">Intranet Portal</a>
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function toggleDetails(id) {
+            const el = document.getElementById(id);
+            if(el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+            } else {
+                el.addClassList.add('hidden');
+            }
+        }
+
+        // Live calculation algorithm baseline: 0.82 kg CO2 per kWh grid baseline
+        function calculateSavings() {
+            const energyMWh = parseFloat(document.getElementById('energyInput').value) || 0;
+            const solarPercent = parseFloat(document.getElementById('solarMix').value) || 0;
+            
+            document.getElementById('mixValue').innerText = solarPercent + "% Solar";
+            
+            const totalKWh = energyMWh * 1000;
+            const solarKWh = totalKWh * (solarPercent / 100);
+            const tonsSaved = Math.round((solarKWh * 0.82) / 1000);
+            
+            document.getElementById('co2Result').innerText = tonsSaved.toLocaleString();
+        }
+
+        // Add dynamically updated tracking listener to range slider
+        document.getElementById('solarMix').addEventListener('input', calculateSavings);
+    </script>
+</body>
+</html>

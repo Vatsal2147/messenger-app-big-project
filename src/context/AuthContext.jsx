@@ -1,10 +1,11 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { auth } from "../config/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+//making auth context, using contextAPI so that we can access user details in any component and we are not stuck in a prop chain
 
-const AuthContext = createContext();
+ const AuthContext = createContext();
 
-// eslint-disable-next-line react-refresh/only-export-components
+
 export const useAuth = () => useContext(AuthContext);
 
 export function AuthProvider({ children }) {

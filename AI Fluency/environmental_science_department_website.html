@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Environmental Science & Engineering</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Fraunces (gorgeous editorial serif for organic titles) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Fraunces', 'serif'],
+                    },
+                    colors: {
+                        forest: {
+                            50: '#f4faf6',
+                            100: '#e7f4eb',
+                            200: '#c3e5ce',
+                            300: '#92cfa7',
+                            400: '#5eae7d',
+                            500: '#3c915f',
+                            600: '#2d734a',
+                            700: '#255c3c',
+                            800: '#1e4b31',
+                            900: '#1b4332', /* Deep forest green */
+                            950: '#0b1f13',
+                        },
+                        earth: {
+                            50: '#faf9f5',
+                            100: '#f5f2e9',
+                            200: '#eadecb',
+                            300: '#dabf9c',
+                            400: '#ca9e6e',
+                            500: '#bd814a',
+                            900: '#2d241c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .curved-divider {
+            clip-path: ellipse(70% 100% at 50% 100%);
+        }
+        .leaf-card {
+            border-radius: 40px 12px 40px 12px;
+        }
+        /* Custom smooth scroll and leaf animations */
+        html {
+            scroll-behavior: smooth;
+        }
+        .floating-leaf {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(5deg); }
+        }
+        /* Seasonal transition classes */
+        .season-autumn {
+            --tw-bg-opacity: 1;
+            background-color: rgb(45 36 28 / var(--tw-bg-opacity)) !important; /* warm brown */
+        }
+    </style>
+</head>
+<body class="bg-[#fcfdfb] text-slate-900 font-sans antialiased selection:bg-forest-200 selection:text-forest-950">
+
+    <!-- TOP ANNOUNCEMENT BAR (Interactive Nature Fact or Quote) -->
+    <div class="bg-forest-900 text-forest-100 text-xs py-2 px-4 text-center border-b border-forest-800 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-seedling text-forest-400 animate-pulse"></i>
+        <span><strong>Department Update:</strong> Join us for the campus Tree Census and BioBlitz this Friday! <a href="#noticeboard" class="underline hover:text-white ml-1">Sign up here</a></span>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="sticky top-0 z-50 bg-[#fcfdfb]/90 backdrop-blur-md border-b border-forest-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <!-- Leaf / Sprout Logo Badge -->
+                <div class="bg-forest-900 text-white p-3 rounded-2xl shadow-md shadow-forest-900/10 flex items-center justify-center border border-forest-700">
+                    <i class="fa-solid fa-tree text-2xl text-forest-300"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-forest-600 block">Department of</span>
+                    <span class="text-xl font-serif font-bold text-forest-950 tracking-tight">Environmental Science <span class="text-forest-500 font-sans font-light">&</span> Engineering</span>
+                </div>
+            </div>
+            
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-forest-900">
+                <a href="#about" class="hover:text-forest-600 transition flex items-center gap-1.5"><i class="fa-solid fa-compass text-forest-400"></i> Mission</a>
+                <a href="#research" class="hover:text-forest-600 transition flex items-center gap-1.5"><i class="fa-solid fa-microscope text-forest-400"></i> Frontiers</a>
+                <a href="#herbarium" class="hover:text-forest-600 transition flex items-center gap-1.5"><i class="fa-solid fa-leaf text-forest-400"></i> Herbarium</a>
+                <a href="#academics" class="hover:text-forest-600 transition flex items-center gap-1.5"><i class="fa-solid fa-graduation-cap text-forest-400"></i> Programs</a>
+                <a href="#sustainability" class="hover:text-forest-600 transition flex items-center gap-1.5"><i class="fa-solid fa-chart-line text-forest-400"></i> Eco-Metrics</a>
+                <a href="#contact" class="bg-forest-900 text-[#fcfdfb] px-5 py-2.5 rounded-full hover:bg-forest-800 hover:shadow-lg hover:shadow-forest-900/20 transition-all font-semibold">Join Department</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION WITH BOTANICAL FRAMING & DEEP GREEN GRADIANT -->
+    <section class="relative bg-gradient-to-b from-[#eef7f2] via-[#f5faf7] to-[#fcfdfb] py-20 lg:py-28 px-4 overflow-hidden">
+        <!-- Floating Botanical SVGs / Leaves in the Background -->
+        <div class="absolute left-6 top-16 text-forest-200/40 text-8xl floating-leaf select-none pointer-events-none hidden md:block">
+            <i class="fa-solid fa-leaf"></i>
+        </div>
+        <div class="absolute right-12 bottom-12 text-forest-200/30 text-9xl floating-leaf select-none pointer-events-none hidden md:block" style="animation-delay: -3s;">
+            <i class="fa-solid fa-seedling"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Text Column -->
+            <div class="lg:col-span-7 space-y-8">
+                <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full text-xs font-semibold bg-forest-100 text-forest-800 border border-forest-200 shadow-sm">
+                    <span class="w-2.5 h-2.5 rounded-full bg-forest-500 animate-ping"></span> 
+                    Active Biosphere Research & Conservation
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif font-black text-forest-950 leading-tight">
+                    Where Nature Meets <br class="hidden sm:block">
+                    <span class="bg-gradient-to-r from-forest-700 via-forest-600 to-emerald-500 bg-clip-text text-transparent">Rigorous Science</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg text-slate-700 max-w-2xl font-light leading-relaxed">
+                    We study the complex interactions that govern the earth. From tracing forest canopy dynamics to developing bioplastic polymers, our students are immersed in forest fieldwork and state-of-the-art biochemistry laboratories.
+                </p>
+
+                <!-- Interactive Season Selector (Demonstrating Nature Adaptability) -->
+                <div class="bg-white/80 backdrop-blur-sm border border-forest-200/50 p-4 rounded-2xl max-w-md shadow-sm">
+                    <span class="text-xs uppercase font-bold tracking-wider text-forest-700 block mb-2"><i class="fa-solid fa-cloud-sun text-forest-500"></i> Experiencing Ecological Shifts</span>
+                    <p class="text-xs text-slate-500 mb-3">The environment changes rapidly. Click a season to preview how our research adapts with nature:</p>
+                    <div class="flex gap-2">
+                        <button onclick="changeSeason('spring')" id="btn-spring" class="flex-1 py-1 px-3 text-xs font-semibold rounded-lg bg-forest-900 text-white transition-all border border-forest-900">
+                            Spring / Summer
+                        </button>
+                        <button onclick="changeSeason('autumn')" id="btn-autumn" class="flex-1 py-1 px-3 text-xs font-semibold rounded-lg bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition-all">
+                            Autumn Focus
+                        </button>
+                        <button onclick="changeSeason('winter')" id="btn-winter" class="flex-1 py-1 px-3 text-xs font-semibold rounded-lg bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition-all">
+                            Winter Cycles
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#academics" class="px-8 py-4 bg-forest-900 text-[#fcfdfb] rounded-xl font-bold hover:bg-forest-800 hover:shadow-lg hover:shadow-forest-900/10 transition-all text-center flex items-center justify-center gap-2">
+                        View Degree Programs <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#research" class="px-8 py-4 bg-white text-forest-900 border border-forest-200 rounded-xl font-bold hover:bg-forest-50 hover:shadow-sm transition-all text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-binoculars"></i> Explorer Lab Portals
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Column with Nature Theme Framing -->
+            <div class="lg:col-span-5 relative">
+                <!-- Organic shape frame background -->
+                <div class="absolute -inset-4 bg-gradient-to-tr from-forest-200 to-lime-200 rounded-full blur-2xl opacity-60 z-0"></div>
+                <div class="relative z-10 leaf-card overflow-hidden border-4 border-white shadow-2xl">
+                    <img id="hero-img" src="http://googleusercontent.com/image_collection/image_retrieval/17018834397852780172_2" alt="Field Research Forest Canopy" class="w-full h-[450px] object-cover transition-all duration-700">
+                    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/75 to-transparent p-6 text-white">
+                        <p class="text-xs uppercase font-bold tracking-widest text-forest-300" id="hero-img-tag">Ecosystem Research Canopy</p>
+                        <h4 class="text-lg font-serif font-semibold mt-1" id="hero-img-desc">Carbon Flux towers capturing forest canopy gas emissions.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEAF GREEN NATURE IMPACT BAR (Replaces traditional abstract metrics) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 bg-forest-950 p-6 md:p-10 rounded-3xl shadow-2xl border-2 border-forest-800/50">
+            
+            <div class="p-4 border-r border-forest-800/60 last:border-0 flex items-start gap-4">
+                <span class="text-3xl text-forest-300 mt-1"><i class="fa-solid fa-leaf"></i></span>
+                <div>
+                    <p class="text-3xl font-serif font-bold text-[#fcfdfb]">24,000+</p>
+                    <p class="text-xs text-forest-200 font-semibold uppercase tracking-wider mt-1">Campus Trees Tracked</p>
+                </div>
+            </div>
+
+            <div class="p-4 md:border-r border-forest-800/60 last:border-0 flex items-start gap-4">
+                <span class="text-3xl text-emerald-400 mt-1"><i class="fa-solid fa-seedling"></i></span>
+                <div>
+                    <p class="text-3xl font-serif font-bold text-emerald-300">140 Acres</p>
+                    <p class="text-xs text-forest-200 font-semibold uppercase tracking-wider mt-1">Active Reforested Plots</p>
+                </div>
+            </div>
+
+            <div class="p-4 border-r border-forest-800/60 last:border-0 flex items-start gap-4">
+                <span class="text-3xl text-lime-400 mt-1"><i class="fa-solid fa-flask-vial"></i></span>
+                <div>
+                    <p class="text-3xl font-serif font-bold text-lime-300">₹14Cr+</p>
+                    <p class="text-xs text-forest-200 font-semibold uppercase tracking-wider mt-1">Conservation Funding</p>
+                </div>
+            </div>
+
+            <div class="p-4 last:border-0 flex items-start gap-4">
+                <span class="text-3xl text-teal-300 mt-1"><i class="fa-solid fa-wind"></i></span>
+                <div>
+                    <p class="text-3xl font-serif font-bold text-teal-200">Carbon-0</p>
+                    <p class="text-xs text-forest-200 font-semibold uppercase tracking-wider mt-1">University Lab Goal</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- RESEARCH FRONTIERS (Deep rich green styling & Organic Details) -->
+    <section id="research" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-forest-600 font-bold text-xs uppercase tracking-widest block mb-2"><i class="fa-solid fa-compass"></i> Department Missions</span>
+            <h2 class="text-3xl sm:text-4xl font-serif font-bold text-forest-950 tracking-tight">Active Research Frontiers</h2>
+            <p class="text-slate-600 mt-3 font-light">We translate rigorous forest botany, environmental chemistry, and structural ecology into applied solutions.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <!-- Card 1 (Air Quality & Forest Canopies) -->
+            <div class="bg-gradient-to-br from-[#f3faf5] to-white rounded-3xl border border-forest-100 p-8 shadow-sm hover:shadow-md hover:border-forest-200 transition-all flex flex-col justify-between leaf-card">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-forest-100 text-forest-800 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-cloud-sun text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-forest-950 mb-3">Atmospheric & Forest Canopy Interaction</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">
+                        Measuring forest transpiration rates, carbon flux in deciduous plots, and investigating urban smog dynamics relative to forest wind breaks.
+                    </p>
+                </div>
+                <div class="mt-8 pt-6 border-t border-forest-100/60">
+                    <div class="flex items-center gap-3">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/17018834397852780172_4" alt="Forest Canopy Lab" class="w-10 h-10 rounded-full object-cover border border-forest-200">
+                        <div>
+                            <p class="text-xs font-bold text-forest-900">Dr. Maya Sen Gupta</p>
+                            <p class="text-[10px] text-slate-500">Canopy Micrometeorology Lab</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 (Hydrobiology & Wetlands) -->
+            <div class="bg-gradient-to-br from-[#f3faf5] to-white rounded-3xl border border-forest-100 p-8 shadow-sm hover:shadow-md hover:border-forest-200 transition-all flex flex-col justify-between leaf-card">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-[#ebf7fc] text-teal-700 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-water text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-forest-950 mb-3">Hydrobiology & Riparian Recovery</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">
+                        Tackling wastewater contaminants, mapping local marshland restoration limits, and utilizing wetland organisms for organic phytoremediation.
+                    </p>
+                </div>
+                <div class="mt-8 pt-6 border-t border-forest-100/60">
+                    <div class="flex items-center gap-3">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/9038118298381787953_1" alt="Water Lab" class="w-10 h-10 rounded-full object-cover border border-forest-200">
+                        <div>
+                            <p class="text-xs font-bold text-forest-900">Prof. Anand Varma</p>
+                            <p class="text-[10px] text-slate-500">Riparian Systems Research Center</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 (Sustainable Bio-Materials & Soil) -->
+            <div class="bg-gradient-to-br from-[#fdfbf6] to-white rounded-3xl border border-forest-100 p-8 shadow-sm hover:shadow-md hover:border-forest-200 transition-all flex flex-col justify-between leaf-card">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-earth-100 text-earth-500 flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-seedling text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-forest-950 mb-3">Mycorrhizal Soil Networks</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed font-light">
+                        Analyzing soil carbon capture capacity and fungi network signaling to bolster agricultural restoration in barren, eroded regions.
+                    </p>
+                </div>
+                <div class="mt-8 pt-6 border-t border-forest-100/60">
+                    <div class="flex items-center gap-3">
+                        <img src="http://googleusercontent.com/image_collection/image_retrieval/9038118298381787953_2" alt="Soil Lab" class="w-10 h-10 rounded-full object-cover border border-forest-200">
+                        <div>
+                            <p class="text-xs font-bold text-forest-900">Dr. Claire Dupont</p>
+                            <p class="text-[10px] text-slate-500">Ecology & Biomass Lab</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FIELD RESEARCH STATIONS (Interactive Tab-Switcher) -->
+    <section class="bg-forest-900 text-[#fcfdfb] py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-overlay" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/17018834397852780172_0');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-forest-300 block"><i class="fa-solid fa-map-location-dot"></i> Outpost Operations</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold tracking-tight">Active Ecology Field Stations</h2>
+                    <p class="text-forest-100/80 font-light leading-relaxed">
+                        Environmental science is not a textbook study—it is a hands-on pursuit. Our department operates three distinct monitoring outposts capturing real-time atmospheric, soil, and aquatic telemetry.
+                    </p>
+
+                    <!-- Interactive Selector Controls -->
+                    <div class="space-y-3">
+                        <button onclick="toggleStation('wetlands')" id="btn-wetlands" class="w-full p-4 rounded-2xl border-2 border-forest-600 bg-forest-950/80 hover:bg-forest-950 text-left transition-all flex items-center justify-between">
+                            <span class="font-serif font-bold"><i class="fa-solid fa-water-ladder text-teal-400 mr-2"></i> Station Alpha: Marshland Basin</span>
+                            <i class="fa-solid fa-circle-play text-forest-400 text-sm"></i>
+                        </button>
+                        <button onclick="toggleStation('canopy')" id="btn-canopy" class="w-full p-4 rounded-2xl border-2 border-transparent bg-forest-800/50 hover:bg-forest-800 text-left transition-all flex items-center justify-between">
+                            <span class="font-serif font-bold text-forest-200"><i class="fa-solid fa-tree-deciduous text-lime-400 mr-2"></i> Station Beta: Old Growth Forest</span>
+                            <i class="fa-solid fa-circle-play text-forest-400 text-sm"></i>
+                        </button>
+                        <button onclick="toggleStation('agriculture')" id="btn-agriculture" class="w-full p-4 rounded-2xl border-2 border-transparent bg-forest-800/50 hover:bg-forest-800 text-left transition-all flex items-center justify-between">
+                            <span class="font-serif font-bold text-forest-200"><i class="fa-solid fa-tractor text-earth-300 mr-2"></i> Station Gamma: Agro-Forestry Plot</span>
+                            <i class="fa-solid fa-circle-play text-forest-400 text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Outpost Data Screen / Display -->
+                <div class="lg:col-span-7 bg-forest-950 border border-forest-800 rounded-3xl p-6 md:p-8 shadow-2xl relative">
+                    <div class="absolute top-4 right-4 bg-red-600 text-white text-[10px] uppercase px-2.5 py-1 rounded-full font-bold tracking-wider flex items-center gap-1.5 animate-pulse">
+                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span> Live Feed
+                    </div>
+
+                    <h3 id="station-title" class="text-2xl font-serif font-bold mb-2 text-[#fcfdfb]">Station Alpha: Marshland Basin Outpost</h3>
+                    <p id="station-desc" class="text-xs text-forest-300 mb-6">Continuous wetland telemetry monitoring nitrogen and water pH cycles.</p>
+
+                    <!-- Station Stats / Telemetry -->
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-forest-900/60 p-4 rounded-xl border border-forest-800">
+                            <p class="text-[10px] uppercase tracking-wider text-forest-400">Current pH Levels</p>
+                            <p id="station-val-1" class="text-xl font-bold font-mono mt-1 text-teal-300">6.82 (Neutral)</p>
+                        </div>
+                        <div class="bg-forest-900/60 p-4 rounded-xl border border-forest-800">
+                            <p class="text-[10px] uppercase tracking-wider text-forest-400">Dissolved Oxygen</p>
+                            <p id="station-val-2" class="text-xl font-bold font-mono mt-1 text-teal-300">8.4 mg/L</p>
+                        </div>
+                        <div class="bg-forest-900/60 p-4 rounded-xl border border-forest-800 col-span-2 md:col-span-1">
+                            <p class="text-[10px] uppercase tracking-wider text-forest-400">Water Flow Velocity</p>
+                            <p id="station-val-3" class="text-xl font-bold font-mono mt-1 text-teal-300">0.45 m/s</p>
+                        </div>
+                    </div>
+
+                    <!-- Station Feed Photo -->
+                    <div class="rounded-xl overflow-hidden h-64 border border-forest-800 relative">
+                        <img id="station-img" src="http://googleusercontent.com/image_collection/image_retrieval/9038118298381787953_0" alt="Marshland Basin Outpost" class="w-full h-full object-cover filter brightness-90">
+                        <div class="absolute bottom-3 left-3 bg-black/60 px-3 py-1.5 rounded-lg text-[10px] text-forest-200">
+                            Remote Cam Unit #04
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE HERBARIUM & SPECIES IDENTIFICATION (Highly Botanical) -->
+    <section id="herbarium" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="bg-[#f5faf6] border border-forest-100 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            <div class="max-w-3xl">
+                <span class="text-xs font-bold uppercase tracking-widest text-forest-700 block mb-2"><i class="fa-solid fa-leaf"></i> Digital Herbarium Portal</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-bold text-forest-950 mb-4">Explore Campus Flora & Soil Profiles</h2>
+                <p class="text-slate-600 font-light leading-relaxed mb-8">
+                    Our department maintains a verified herbarium registry cataloging biodiversity. Click on the flora tags below to load real taxonomical metadata and environmental thresholds archived by our biology team:
+                </p>
+
+                <!-- Interactive Plant Tags -->
+                <div class="flex flex-wrap gap-2.5 mb-8">
+                    <button onclick="loadPlant('palash')" id="plant-palash" class="py-2 px-4 rounded-full text-sm font-semibold transition-all bg-forest-900 text-white shadow-md">
+                        🔥 Flame of the Forest (Butea monosperma)
+                    </button>
+                    <button onclick="loadPlant('neem')" id="plant-neem" class="py-2 px-4 rounded-full text-sm font-semibold transition-all bg-white text-forest-800 border border-forest-200 hover:border-forest-300">
+                        🍃 Neem (Azadirachta indica)
+                    </button>
+                    <button onclick="loadPlant('banyan')" id="plant-banyan" class="py-2 px-4 rounded-full text-sm font-semibold transition-all bg-white text-forest-800 border border-forest-200 hover:border-forest-300">
+                        🌳 Sacred Fig / Banyan (Ficus benghalensis)
+                    </button>
+                </div>
+
+                <!-- Plant Detail Display Frame -->
+                <div class="bg-white rounded-2xl border border-forest-100 p-6 shadow-sm grid md:grid-cols-12 gap-6">
+                    <div class="md:col-span-5 h-48 md:h-full rounded-xl overflow-hidden bg-forest-50 border border-forest-100">
+                        <img id="plant-img" src="http://googleusercontent.com/image_collection/image_retrieval/17018834397852780172_3" alt="Palash Flower" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:col-span-7 space-y-4">
+                        <div>
+                            <span id="plant-family" class="text-[10px] font-bold text-forest-600 tracking-wider uppercase">Fabaceae Family</span>
+                            <h4 id="plant-name" class="text-xl font-serif font-bold text-forest-950 mt-0.5">Butea monosperma (Palash)</h4>
+                        </div>
+                        <p id="plant-desc" class="text-xs text-slate-600 leading-relaxed font-light">
+                            Widely distributed across central India, noted for bright vermillion-colored blooms. Highly drought-resistant and dynamic nitrogen-fixing properties that revitalize dry, arid soils.
+                        </p>
+                        <div class="grid grid-cols-2 gap-3 text-[11px] pt-3 border-t border-slate-100">
+                            <div>
+                                <span class="block text-slate-400">Carbon Capture Index</span>
+                                <span id="plant-metric-1" class="font-bold text-forest-900">Moderate to High</span>
+                            </div>
+                            <div>
+                                <span class="block text-slate-400">Soil pH Tolerance</span>
+                                <span id="plant-metric-2" class="font-bold text-forest-900">5.5 – 8.5 (Vast)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SUSTAINABILITY CAMPUS TRACKER (Interactive Eco Calculator with leaf gradients) -->
+    <section id="sustainability" class="bg-gradient-to-br from-[#ebf5ef] via-[#f2faf5] to-[#f6faf7] py-24 border-t border-forest-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-forest-700 block mb-2"><i class="fa-solid fa-tree"></i> Campus Conservation Index</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-forest-950 mb-6">Real-Time Ecological Mitigation Tracker</h2>
+                    <p class="text-slate-600 font-light leading-relaxed mb-8">
+                        Our engineering cohorts construct computational models to guide the wider university administration in cutting emissions and conserving water. Monitor our active 2026 milestones below:
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-2 text-forest-950">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-seedling text-forest-500"></i> Local Afforestation Canopy Restoration</span>
+                                <span class="text-forest-700">84% Progress Achieved</span>
+                            </div>
+                            <div class="w-full bg-forest-100 h-3 rounded-full overflow-hidden p-0.5 border border-forest-200">
+                                <div class="bg-forest-600 h-2 rounded-full" style="width: 84%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-2 text-forest-950">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-droplet text-teal-500"></i> Greywater Aquifer Purification & Recharge</span>
+                                <span class="text-forest-700">62% Progress Achieved</span>
+                            </div>
+                            <div class="w-full bg-forest-100 h-3 rounded-full overflow-hidden p-0.5 border border-forest-200">
+                                <div class="bg-forest-600 h-2 rounded-full" style="width: 62%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-xs font-semibold mb-2 text-forest-950">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-house-chimney-crack text-earth-500"></i> Smart Thermostat Energy Offsets</span>
+                                <span class="text-forest-700">92% Progress Achieved</span>
+                            </div>
+                            <div class="w-full bg-forest-100 h-3 rounded-full overflow-hidden p-0.5 border border-forest-200">
+                                <div class="bg-forest-600 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Campus Tree Impact Calculator -->
+                <div class="bg-[#10271b] text-white border-2 border-forest-800 rounded-3xl p-6 md:p-8 shadow-2xl">
+                    <h3 class="text-xl font-serif font-bold mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-forest-300"></i> Active Canopy Sequestration Estimator
+                    </h3>
+                    <p class="text-xs text-forest-200 mb-6 font-light">Determine how many metric tons of carbon are sequestered on campus based on the quantity and species profiles of trees we plant together.</p>
+                    
+                    <div class="space-y-4 text-forest-100">
+                        <div>
+                            <label class="block text-xs uppercase font-bold tracking-widest text-forest-300 mb-2">Quantity of Saplings To Plant</label>
+                            <input type="number" id="saplingInput" value="450" class="w-full bg-forest-950/80 border border-forest-800 rounded-xl px-4 py-3 text-[#fcfdfb] focus:outline-none focus:border-forest-400 font-mono">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-bold tracking-widest text-forest-300 mb-2">Selected Dominant Tree Genus</label>
+                            <select id="saplingType" class="w-full bg-forest-950/80 border border-forest-800 rounded-xl px-4 py-3 text-[#fcfdfb] focus:outline-none focus:border-forest-400">
+                                <option value="22">Neem / Azadirachta (High Absorption: 22kg/yr)</option>
+                                <option value="25">Banyan / Ficus (Premium Canopy: 25kg/yr)</option>
+                                <option value="15">Palash / Butea (Flowering: 15kg/yr)</option>
+                            </select>
+                        </div>
+                        <div class="pt-6 mt-6 border-t border-forest-800/80 flex justify-between items-center">
+                            <div>
+                                <p class="text-xs uppercase text-forest-300 font-semibold tracking-wider">Estimated CO₂ Absorbed / Year</p>
+                                <p class="text-3xl font-serif font-bold text-emerald-400 mt-1"><span id="calcResult">9,900</span> kg / Yr</p>
+                            </div>
+                            <button onclick="calculateCanopy()" class="px-6 py-3 bg-forest-600 text-white rounded-xl font-bold hover:bg-forest-500 hover:shadow-lg transition">Estimate</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ACADEMICS & NOTICE BOARD (Leafy Paper style blocks) -->
+    <section id="academics" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="grid lg:grid-cols-3 gap-12">
+            
+            <div class="lg:col-span-2 space-y-8">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-forest-700 block mb-2"><i class="fa-solid fa-graduation-cap"></i> Academic Pathways</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-forest-950">Enrollment & Curricula</h2>
+                    <p class="text-slate-600 font-light mt-2">Developing field-focused scientists, conservation specialists, and design engineers.</p>
+                </div>
+
+                <div class="grid gap-6">
+                    <!-- Program 1 -->
+                    <div class="bg-white border border-forest-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div>
+                            <span class="text-[10px] font-bold text-forest-600 uppercase tracking-wide">Undergraduate Admissions</span>
+                            <h4 class="text-lg font-serif font-bold text-forest-950 mt-0.5">B.Tech / BS in Earth & Hydrosphere Systems</h4>
+                            <p class="text-slate-500 text-xs mt-1">Interdisciplinary modules covering atmospheric dynamics, environmental biochemistry, and fluid dynamics.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center justify-center bg-forest-50 text-forest-900 border border-forest-100 px-5 py-2.5 rounded-xl text-xs font-semibold hover:bg-forest-100 transition whitespace-nowrap">
+                            Course Guide <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-[10px]"></i>
+                        </a>
+                    </div>
+
+                    <!-- Program 2 -->
+                    <div class="bg-white border border-forest-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+                        <div>
+                            <span class="text-[10px] font-bold text-teal-600 uppercase tracking-wide">Advanced Postgrad Research</span>
+                            <h4 class="text-lg font-serif font-bold text-forest-950 mt-0.5">M.Tech & Ph.D. Research Scholars</h4>
+                            <p class="text-slate-500 text-xs mt-1">Specialized research inside microfluidic soil labs, carbon offset modeling, and bioremediation technology development.</p>
+                        </div>
+                        <a href="#" class="inline-flex items-center justify-center bg-forest-50 text-forest-900 border border-forest-100 px-5 py-2.5 rounded-xl text-xs font-semibold hover:bg-forest-100 transition whitespace-nowrap">
+                            Admissions Portal <i class="fa-solid fa-arrow-up-right-from-square ml-2 text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Noticeboard (Recycled Paper / Bulletin style) -->
+            <div id="noticeboard" class="bg-gradient-to-b from-[#fdfbf7] to-[#f8f5eb] border-2 border-[#ecdcc8] rounded-3xl p-6 shadow-sm relative">
+                <!-- Push Pin SVG Decorator -->
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 text-rose-800 text-2xl select-none">
+                    <i class="fa-solid fa-thumbtack"></i>
+                </div>
+                
+                <h3 class="text-xl font-serif font-bold text-[#44382c] mb-6 flex items-center gap-2 mt-2">
+                    <i class="fa-solid fa-bullhorn text-[#ca9e6e]"></i> Department Bulletin Board
+                </h3>
+                
+                <div class="space-y-6">
+                    <div class="border-l-2 border-forest-600 pl-4">
+                        <span class="text-[10px] text-[#8c7e6d] font-bold block">JULY 18, 2026</span>
+                        <a href="#" class="text-sm font-serif font-bold text-[#2d241c] hover:text-forest-700 transition mt-0.5 block">Seminar: Dr. Sen Gupta on Deciduous Gas Transpiration Analysis</a>
+                    </div>
+                    <div class="border-l-2 border-forest-300 pl-4">
+                        <span class="text-[10px] text-[#8c7e6d] font-bold block">JULY 22, 2026</span>
+                        <a href="#" class="text-sm font-serif font-bold text-[#2d241c] hover:text-forest-700 transition mt-0.5 block">Autumn BioBlitz Canopy Species Census – Volunteers Wanted!</a>
+                    </div>
+                    <div class="border-l-2 border-forest-300 pl-4">
+                        <span class="text-[10px] text-[#8c7e6d] font-bold block">AUGUST 05, 2026</span>
+                        <a href="#" class="text-sm font-serif font-bold text-[#2d241c] hover:text-forest-700 transition mt-0.5 block">Project Funding Opening: JRF Post inside Microplastics Remediation Lab</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-forest-950 text-forest-300 border-t border-forest-900 py-16 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-8 mb-12">
+            <div class="md:col-span-6 space-y-4">
+                <div class="flex items-center gap-2">
+                    <div class="bg-forest-900 text-forest-300 p-2.5 rounded-xl">
+                        <i class="fa-solid fa-leaf text-xl"></i>
+                    </div>
+                    <p class="font-serif font-bold text-white text-lg">Environmental Science & Engineering</p>
+                </div>
+                <p class="text-xs text-forest-400 font-light max-w-sm">
+                    Tackling structural environmental crises, climate vulnerability modeling, and biological conservation. Founded 1994.
+                </p>
+            </div>
+            <div class="md:col-span-3 space-y-3">
+                <p class="font-semibold text-white uppercase text-xs tracking-wider">Quick Channels</p>
+                <ul class="space-y-2 text-xs font-light">
+                    <li><a href="#" class="hover:text-white transition">Faculty Profiles</a></li>
+                    <li><a href="#" class="hover:text-white transition">Student Portal</a></li>
+                    <li><a href="#" class="hover:text-white transition">Herbarium Registry</a></li>
+                    <li><a href="#" class="hover:text-white transition">Laboratories Index</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-3 space-y-3">
+                <p class="font-semibold text-white uppercase text-xs tracking-wider">Contact Outpost</p>
+                <p class="text-xs text-forest-400 font-light leading-relaxed">
+                    Main Administration Office<br>
+                    Biosphere & Earth Science Complex<br>
+                    University Academic Block 04
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-forest-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-forest-400">
+            <p>&copy; 2026 Department of Environmental Science & Engineering. All eco-rights preserved.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Intranet Services</a>
+                <a href="#" class="hover:text-white transition">Campus Map</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT FOR THE THEME SYSTEM, MAPS, HERBARIUM, AND ESTIMATOR -->
+    <script>
+        // Season Theme Switcher logic
+        function changeSeason(season) {
+            const heroImg = document.getElementById('hero-img');
+            const heroTag = document.getElementById('hero-img-tag');
+            const heroDesc = document.getElementById('hero-img-desc');
+            
+            // Clear current button styles
+            ['spring', 'autumn', 'winter'].forEach(s => {
+                const btn = document.getElementById('btn-' + s);
+                btn.className = "flex-1 py-1 px-3 text-xs font-semibold rounded-lg bg-white text-slate-600 border border-slate-200 hover:bg-slate-50 transition-all";
+            });
+            
+            // Set active button style
+            document.getElementById('btn-' + season).className = "flex-1 py-1 px-3 text-xs font-semibold rounded-lg bg-forest-900 text-white transition-all border border-forest-900";
+
+            if (season === 'spring') {
+                heroImg.src = "http://googleusercontent.com/image_collection/image_retrieval/17018834397852780172_2";
+                heroTag.innerText = "Ecosystem Research Canopy";
+                heroDesc.innerText = "Carbon Flux towers capturing forest canopy gas emissions.";
+            } else if (season === 'autumn') {
+                heroImg.src = "http://googleusercontent.com/image_collection/image_retrieval/17018834397852780172_4";
+                heroTag.innerText = "Deciduous Transpiration Cycle";
+                heroDesc.innerText = "Mapping organic nutrient decomposition in soil cycles.";
+            } else if (season === 'winter') {
+                heroImg.src = "http://googleusercontent.com/image_collection/image_retrieval/17018834397852780172_0";
+                heroTag.innerText = "Sub-freezing Ground Telemetry";
+                heroDesc.innerText = "Studying soil microbe viability and nitrogen hibernation.";
+            }
+        }
+
+        // Active Stations Switcher logic
+        function toggleStation(station) {
+            const title = document.getElementById('station-title');
+            const desc = document.getElementById('station-desc');
+            const val1 = document.getElementById('station-val-1');
+            const val2 = document.getElementById('station-val-2');
+            const val3 = document.getElementById('station-val-3');
+            const img = document.getElementById('station-img');
+
+            // Clear current button styles
+            ['wetlands', 'canopy', 'agriculture'].forEach(st => {
+                const btn = document.getElementById('btn-' + st);
+                btn.className = "w-full p-4 rounded-2xl border-2 border-transparent bg-forest-800/50 hover:bg-forest-800 text-left transition-all flex items-center justify-between";
+                btn.querySelector('span').className = "font-serif font-bold text-forest-200";
+            });
+
+            // Set active button style
+            const activeBtn = document.getElementById('btn-' + station);
+            activeBtn.className = "w-full p-4 rounded-2xl border-2 border-forest-600 bg-forest-950/80 hover:bg-forest-950 text-left transition-all flex items-center justify-between";
+            activeBtn.querySelector('span').className = "font-serif font-bold text-[#fcfdfb]";
+
+            if (station === 'wetlands') {
+                title.innerText = "Station Alpha: Marshland Basin Outpost";
+                desc.innerText = "Continuous wetland telemetry monitoring nitrogen and water pH cycles.";
+                val1.innerText = "6.82 (Neutral)";
+                val2.innerText = "8.4 mg/L";
+                val3.innerText = "0.45 m/s";
+                img.src = "http://googleusercontent.com/image_collection/image_retrieval/9038118298381787953_0";
+            } else if (station === 'canopy') {
+                title.innerText = "Station Beta: Old Growth Forest Canopy";
+                desc.innerText = "Vertical flux tower tracking carbon absorption limits of old-growth trees.";
+                val1.innerText = "5.45 (Acidic Soil)";
+                val2.innerText = "94% Humid";
+                val3.innerText = "2.8 m/s (Wind)";
+                img.src = "http://googleusercontent.com/image_collection/image_retrieval/17018834397852780172_1";
+            } else if (station === 'agriculture') {
+                title.innerText = "Station Gamma: Agro-Forestry Trial Fields";
+                desc.innerText = "Investigating mixed crop rotation with dense nitrogen-fixing foliage.";
+                val1.innerText = "7.10 (Alkaline)";
+                val2.innerText = "18% Moisture";
+                val3.innerText = "Organic Mix";
+                img.src = "http://googleusercontent.com/image_collection/image_retrieval/9038118298381787953_2";
+            }
+        }
+
+        // Herbarium Data Database logic
+        const herbariumDB = {
+            palash: {
+                family: "Fabaceae Family",
+                name: "Butea monosperma (Palash)",
+                desc: "Widely distributed across central India, noted for bright vermillion-colored blooms. Highly drought-resistant and dynamic nitrogen-fixing properties that revitalize dry, arid soils.",
+                metric1: "Moderate to High",
+                metric2: "5.5 – 8.5 (Vast)",
+                img: "http://googleusercontent.com/image_collection/image_retrieval/17018834397852780172_3"
+            },
+            neem: {
+                family: "Meliaceae Family",
+                name: "Azadirachta indica (Neem)",
+                desc: "Reputed for outstanding natural antibacterial, antiviral and biological pesticide traits. Highly adaptive in poor quality soils, contributing heavily to wind erosion mitigation.",
+                metric1: "High Sequestration",
+                metric2: "6.0 – 8.0 (Normal)",
+                img: "http://googleusercontent.com/image_collection/image_retrieval/17018834397852780172_2"
+            },
+            banyan: {
+                family: "Moraceae Family",
+                name: "Ficus benghalensis (Banyan)",
+                desc: "India's national tree, recognized for vast aerial roots. Houses over 40 species of nested birds, creating crucial micro-biodiversity nodes in both rural forests and concrete campuses.",
+                metric1: "Extremely Premium",
+                metric2: "5.0 – 7.5 (Acidic/Neutral)",
+                img: "http://googleusercontent.com/image_collection/image_retrieval/17018834397852780172_1"
+            }
+        };
+
+        function loadPlant(key) {
+            // Update tag active styles
+            ['palash', 'neem', 'banyan'].forEach(p => {
+                const btn = document.getElementById('plant-' + p);
+                btn.className = "py-2 px-4 rounded-full text-sm font-semibold transition-all bg-white text-forest-800 border border-forest-200 hover:border-forest-300";
+            });
+            document.getElementById('plant-' + key).className = "py-2 px-4 rounded-full text-sm font-semibold transition-all bg-forest-900 text-white shadow-md";
+
+            // Populate metadata
+            const data = herbariumDB[key];
+            document.getElementById('plant-family').innerText = data.family;
+            document.getElementById('plant-name').innerText = data.name;
+            document.getElementById('plant-desc').innerText = data.desc;
+            document.getElementById('plant-metric-1').innerText = data.metric1;
+            document.getElementById('plant-metric-2').innerText = data.metric2;
+            document.getElementById('plant-img').src = data.img;
+        }
+
+        // Eco-Calculator Logic
+        function calculateCanopy() {
+            const qty = parseFloat(document.getElementById('saplingInput').value) || 0;
+            const factor = parseFloat(document.getElementById('saplingType').value) || 0;
+            const finalResult = qty * factor;
+            document.getElementById('calcResult').innerText = finalResult.toLocaleString();
+        }
+    </script>
+</body>
+</html>
