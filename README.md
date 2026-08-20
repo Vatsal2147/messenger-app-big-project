@@ -77,9 +77,10 @@ server-side rewrite for client-side routes.
 Make sure your `.env` values are present at build time — never commit
 `.env` itself (it's git-ignored).
 
-## Future Improvements
+## Limitations
 
-* Private 1-on-1 DMs (current rooms are public/group, per the course spec)
-* Room membership / private rooms
-* Message reactions
-* Push notifications
+* Doesn't contain private 1-on-1 DMs (current rooms are public/group, per the course spec)
+* No Room membership / private rooms yet
+* Message reactions are yet to be installed
+* Push notifications are not enabled, currently being worked on.
+
