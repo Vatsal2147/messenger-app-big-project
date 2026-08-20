@@ -25,6 +25,9 @@ image sharing, emoji picker, and dark mode.
 * Vite
 * Lucide React (icons) + emoji-picker-react
 
+## What was built with AI
+* In a complete sense, this projcet has been made by me. I asked AI for design inspirations when i was first starting out, also, i Couldnt configure how the "rooms" and the "listener" was waorking, so spent way too much time with claude to discuss it. The emoji implementation has been added completely by AI. This is project i took up over the summer in guidance of a mentor from my college, so she helped me more than the Ai ever could.
+
 ## Data Model
 
 ```
