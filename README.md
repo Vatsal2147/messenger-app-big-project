@@ -55,27 +55,9 @@ Storage:
    npm run dev
    ```
 
-## Firebase Console Setup Checklist
+## v2 eval results by Claude
 
-In [console.firebase.google.com](https://console.firebase.google.com), for your project:
-
-- **Authentication → Sign-in method** → enable **Google** and **Email/Password**
-- **Firestore Database** → Create database (test mode is fine to start) → then go to **Rules** tab and paste in `firestore.rules` from this repo → Publish
-- **Realtime Database** → Create database → copy the URL it gives you into `VITE_FIREBASE_DATABASE_URL` in `.env` → go to **Rules** tab and paste in `database.rules.json` → Publish
-- **Storage** → Get started → go to **Rules** tab and paste in `storage.rules` → Publish
-
-## Deployment
-
-This project deploys to GitHub Pages via `gh-pages`:
-```bash
-npm run deploy
-```
-Uses `HashRouter` (URLs look like `.../#/room/abc123`) specifically so
-room links keep working after a refresh on GitHub Pages, which has no
-server-side rewrite for client-side routes.
-
-Make sure your `.env` values are present at build time — never commit
-`.env` itself (it's git-ignored).
+*The Messenger App is a well-implemented real-time communication application that demonstrates a strong understanding of modern frontend development and Firebase-based backend services. One of its major strengths is its use of multiple Firebase services for different purposes, including Firebase Authentication for user login, Firestore for storing users, rooms, and messages, Realtime Database for online presence and typing indicators, and Firebase Storage for image sharing. The project is also well-organized into components, hooks, contexts, and configuration files, which makes the codebase relatively easy to understand and maintain. The implementation of real-time messaging and presence features adds significant technical depth compared with a basic CRUD application. The inclusion of Firebase security rules is another positive aspect, as it shows awareness of authentication and data-access security. However, there are several areas that could be improved. The application currently has limited private messaging and room-membership functionality, meaning more robust authorization would be required for a production-ready system. Message pagination could also be implemented to improve performance when conversations contain a large number of messages. Additionally, the project would benefit from automated unit and integration testing to ensure reliability and make future changes safer. Further improvements could include message editing/deletion, stronger error handling, improved loading and empty states, and additional UI/UX refinements. Overall, the project is a strong student-level implementation that successfully demonstrates practical knowledge of React, Firebase, real-time systems, authentication, and database management, while still having clear opportunities for improvement in scalability, testing, and production-level authorization.
 
 ## Limitations
 
